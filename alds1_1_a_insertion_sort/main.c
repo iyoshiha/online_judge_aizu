@@ -12,6 +12,18 @@ e.g of input
 # include <stdlib.h>
 # include <string.h>
 
+void trace(int *nums, int n)
+{
+	for (int p = 0; n > p; p++)
+	{
+		printf("%d", nums[p]);
+		if (p != n - 1) printf(" ");
+	}
+	printf("\n");
+}
+
+
+
 int	main(void)
 {
 	int n, i = 0, j, k;
@@ -25,9 +37,9 @@ int	main(void)
 		i++;
 	}
 
+	trace(nums, n);
 	for (i = 1; n > i; i++)
 	{
-		if (!(i == 0)) printf("\n");
 		for (j = i - 1, k = 0; (j + k) >= 0;)
 		{
 			if (!(nums[j + k] > nums[i + k]))
@@ -37,11 +49,7 @@ int	main(void)
 			nums[j + k] = nums[j + k] ^ nums[i + k];
 			k--;
 		}
-		for (int p = 0; n > p; p++)
-		{
-			printf("%d", nums[p]);
-			if (p != n - 1) printf(" ");
-		}
+		trace(nums, n);
 	}
 	return(0);
 }
