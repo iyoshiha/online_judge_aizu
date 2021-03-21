@@ -55,6 +55,6 @@ int main(void)
 		k++;
 	}
 	trace(num, n);
-	printf("%d", swap_num);
+	printf("%d\n", swap_num);
 	return (0);
 }
