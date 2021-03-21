@@ -39,6 +39,7 @@ int main(void)
 	k = 0;
 	while (k < (i = n - 1))
 	{
+		j = i - 1;
 		while (k <= j)
 		{
 			if (num[j] > num[i])
