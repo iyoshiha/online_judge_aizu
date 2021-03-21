@@ -2,6 +2,8 @@
 # include <stdlib.h>
 # include <string.h>
 
+typedef int t_bool ;
+
 void trace(int *nums, int n)
 {
 	for (int p = 0; n > p; p++)
@@ -30,12 +32,15 @@ int getNumArray(int **nums, int *n)
 int bubbleSort(int *num, int n)
 {
 	int i,j,k, swap_num;
+	t_bool flag = 1;
 
 	k = 0;
 	swap_num = 0;
-	while (k < (i = n - 1))
+	while (flag)
 	{
+		i = n - 1;
 		j = i - 1;
+		flag = 0;
 		while (k <= j)
 		{
 			if (num[j] > num[i])
@@ -44,6 +49,7 @@ int bubbleSort(int *num, int n)
 				num[i] = num[j] ^ num[i];
 				num[j] = num[j] ^ num[i];
 				swap_num++;
+				flag = 1;
 			}
 			i--;
 			j--;
