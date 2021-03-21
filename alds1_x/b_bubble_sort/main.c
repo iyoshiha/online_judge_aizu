@@ -27,16 +27,12 @@ int getNumArray(int **nums, int *n)
 	return (1);
 }
 
-int main(void)
+int bubbleSort(int *num, int n)
 {
-	int n;
-	int *num;
-	int k;
-	int i = 1, j = 0;
-	int swap_num = 0;
+	int i,j,k, swap_num;
 
-	getNumArray(&num, &n);
 	k = 0;
+	swap_num = 0;
 	while (k < (i = n - 1))
 	{
 		j = i - 1;
@@ -54,6 +50,17 @@ int main(void)
 		}
 		k++;
 	}
+	return swap_num;
+}
+
+int main(void)
+{
+	int n;
+	int *num;
+	int swap_num;
+
+	getNumArray(&num, &n);
+	swap_num = bubbleSort(num, n);
 	trace(num, n);
 	printf("%d\n", swap_num);
 	return (0);
