@@ -1,13 +1,3 @@
-/*
-1 <= N 100
-0 <= A <= 1000
-
-e.g of input
-
-6				length of N
-5 2 4 6 1 3		given N nums of integers 
-*/
-
 #include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
