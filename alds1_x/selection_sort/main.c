@@ -5,11 +5,7 @@
 typedef struct s_data
 {
 	int index;
-<<<<<<< HEAD
-	int minv;
-=======
 	int minVal;
->>>>>>> 5a9fac055151685a93c9f4a6c81072e35b6f79d2
 } t_data;
 
 void trace(int *nums, int n)
@@ -59,19 +55,12 @@ int main()
 	int minv;
 	int i;
 	int di;
-<<<<<<< HEAD
 	t_data minval;
 
-=======
-
-	i = 0;
->>>>>>> 5a9fac055151685a93c9f4a6c81072e35b6f79d2
 	di = -1;
 	getNumArray(&num, &n);
-
 	while (++di < n - 1)
 	{
-<<<<<<< HEAD
 		i = di;
 		minval.minv = num[di];
 		while (n > i)
@@ -93,26 +82,6 @@ int main()
 
 		}
 		num[di] = minval.minv;
-=======
-		minv = num[di];
-		while (n - 1 > i)
-		{
-			if (minv > num[i + 1])
-				minv = num[i + 1];
-			i++;
-		}
-		if (minv == num[di])
-			continue;
-		i = di;
-		while (i < n - 1) // swap all;
-		{
-			num[i] = ^ num[i];
-			num[i + 1] = num[i + 1] ^ num[i];
-			num[i] = num[i + 1] ^ num[i];
-			i++;
-		}
-		num[i] = minv;
->>>>>>> 5a9fac055151685a93c9f4a6c81072e35b6f79d2
 	}
 	trace(num, n);
 	return (0);
