@@ -33,21 +33,19 @@ int getNumArray(int **nums, int *n)
 	return (1);
 }
 
-int main()
+int selectionSort(int *num, int n)
 {
-	int n;
-	int i;
-	int di;
-	int *num;
-	int swap_num = 0;
-	t_data minval;
-
-	di = -1;
-	getNumArray(&num, &n);
-	while (++di < n - 1)
+	int i, leftmost = -1, swap_num = 0;
+	struct data
 	{
-		i = di;
-		minval.minv = num[di];
+		int index;
+		int minv;
+	}minval;
+
+	while (++leftmost < n - 1)
+	{
+		i = leftmost;
+		minval.minv = num[leftmost];
 		while (n > i)
 		{
 			if (minval.minv > num[i])
@@ -57,13 +55,24 @@ int main()
 			}
 			i++;
 		}
-		if (minval.minv == num[di])
+		if (minval.minv == num[leftmost])
 			continue;
 		i = minval.index;
+		num[minval.index] = num[leftmost]; num[leftmost] = minval.minv;
 		swap_num++;
-		num[minval.index] = num[di];
-		num[di] = minval.minv;
 	}
+	return (swap_num);
+}
+
+int main()
+{
+	int n;
+	int *num;
+	int swap_num;
+	t_data minval;
+
+	getNumArray(&num, &n);
+	swap_num = selectionSort(num, n);
 	trace(num, n);
 	printf("%d\n", swap_num);
 	return (0);
