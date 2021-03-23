@@ -61,7 +61,11 @@ int main()
 			continue;
 		i = minval.index;
 		swap_num++;
-		num[minval.index] = num[di];
+		while ((i > di )) // swap all;
+		{
+			num[i] = num[i - 1];
+			i--;
+		}
 		num[di] = minval.minv;
 	}
 	trace(num, n);
