@@ -5,7 +5,7 @@
 typedef struct s_data
 {
 	int index;
-	int minVal;
+	int minv;
 } t_data;
 
 void trace(int *nums, int n)
@@ -33,28 +33,13 @@ int getNumArray(int **nums, int *n)
 	return (1);
 }
 
-/*
-   int linerSearch(int num, int n, const int doneindex, int *minv)
-{
-	int i;
-
-	*minv = num[doneindex];
-	i = doneindex;
-	while (n > i + 2)
-	{
-		if (*minv > num[i + 1])
-			*minv = num[i + 1];
-	}
-	return (doneindex + 1);
-}
-*/
 int main()
 {
 	int n;
-	int *num;
-	int minv;
 	int i;
 	int di;
+	int *num;
+	int swap_num = 0;
 	t_data minval;
 
 	di = -1;
@@ -75,14 +60,15 @@ int main()
 		if (minval.minv == num[di])
 			continue;
 		i = minval.index;
+		swap_num++;
 		while ((i > di )) // swap all;
 		{
 			num[i] = num[i - 1];
 			i--;
-
 		}
 		num[di] = minval.minv;
 	}
 	trace(num, n);
+	printf("%d\n", swap_num);
 	return (0);
 }
