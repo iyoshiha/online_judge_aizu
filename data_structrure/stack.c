@@ -26,13 +26,16 @@ int	isFull()
 
 int	push(int num)
 {
+	if (isFull())
+		return (-1);
 	S[++top] = num;
+		return (0);
 }
 
 int	pop()
 {
 	if isEmpty()
-		// error
+		return 0;
 	top--;
 	return S[top+1];
 }
