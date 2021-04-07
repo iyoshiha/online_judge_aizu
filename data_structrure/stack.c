@@ -4,6 +4,8 @@
 # include <string.h>
 
 #define MAX 1000
+#define ERROR -1
+#define SUCCESS 1
 int	top; // this points at the last of elements of S;
 int S[MAX]; // Stack;
 
@@ -27,17 +29,17 @@ int	isFull()
 int	push(int num)
 {
 	if (isFull())
-		return (-1);
+		return (ERROR);
 	S[++top] = num;
-		return (0);
+		return (SUCCESS);
 }
 
 int	pop()
 {
 	if isEmpty()
-		return 0;
+		return (ERROR);
 	top--;
-	return S[top+1];
+	return (S[top+1]);
 }
 
 int	main(void)
