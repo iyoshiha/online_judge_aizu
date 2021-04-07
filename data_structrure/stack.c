@@ -13,7 +13,9 @@ int initTop()
 
 int	isEmpty()
 {
-
+	if (top == 0)
+		return (1);
+	return (0);
 }
 
 int	isFull(int top, int num)
@@ -37,7 +39,7 @@ int	pop()
 
 int	main(void)
 {
-	
+	top = 0;	
 
 
 	return(0);
