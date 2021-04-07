@@ -3,9 +3,20 @@
 # include <stdlib.h>
 # include <string.h>
 
-int	top()
+int initTop()
 {
 
+}
+
+int	isEmpty()
+{
+
+}
+
+int	isFull(int top, int num)
+{
+
+	return (top >= num - 1);
 }
 
 int	push()
