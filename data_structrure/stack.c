@@ -3,12 +3,13 @@
 # include <stdlib.h>
 # include <string.h>
 
-int	top;
-int *S; // Stack;
+#define MAX (1000)
+int	top; // this points at the last of elements of S;
+int S[MAX]; // Stack;
 
 int initTop()
 {
-
+	top = 0;
 }
 
 int	isEmpty()
@@ -18,10 +19,9 @@ int	isEmpty()
 	return (0);
 }
 
-int	isFull(int top, int num)
+int	isFull()
 {
-
-	return (top >= num - 1);
+	return (top >= MAX - 1);
 }
 
 int	push(int num)
@@ -39,8 +39,7 @@ int	pop()
 
 int	main(void)
 {
-	top = 0;	
-
+	initTop();	
 
 	return(0);
 }
