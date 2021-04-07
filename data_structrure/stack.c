@@ -3,7 +3,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-#define MAX (1000)
+#define MAX 1000
 int	top; // this points at the last of elements of S;
 int S[MAX]; // Stack;
 
