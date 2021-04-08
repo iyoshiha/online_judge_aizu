@@ -65,7 +65,20 @@ int	main(int argc, char *argv[])
 	{
 		if (is_digit())
 			push(argv[i][0]);
-		else if (is_operator())
+		else if (argv[i][0] == '+')
+		{
+			push(argv[i][0] );
+			// need to think as ascii;
+
+		}
+		else if (argv[i][0] == '+')
+		{
+			push();
+
+		}
+
+
+
 
 
 	}
