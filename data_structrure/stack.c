@@ -14,9 +14,9 @@ int	is_digit(int n)
 	int ary[10] = {0,1,2,3,4,5,6,7,8,9};
 	int i;
 
-	while (num[i] == '\0')
+	while (i < 10)
 	{
-	if (n == (num[i] - '0'))
+	if (n == (ary[i] - '0'))
 		return (1);
 	i++;
 	}
@@ -68,12 +68,16 @@ int c_to_i(char c)
 int	main(int argc, char *argv[])
 {
 	int i = 0;
-
+	int tmp;
 	initTop();
 	
 	while (argc  > ++i)
 	{
-		if (is_digit())
+		tmp = argv[i][0];
+		if tmp == '*'
+			// handle *; times all of the elements in the stack; 
+		else if (tmp == '+' || tmp == '-')
+			if (is_digit())
 		{
 			push(argv[i][0]);
 			
